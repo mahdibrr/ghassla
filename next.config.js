@@ -12,7 +12,7 @@ module.exports = {
     return [
       {
         source: '/:path*',
-        destination: 'https://v9qb68rj-8081.uks1.devtunnels.ms/:path*',
+        destination: 'https://localhost:8081/:path*',
       },
     ]
   },
