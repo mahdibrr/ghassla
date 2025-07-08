@@ -9,12 +9,16 @@ module.exports = {
     ],
   },
   async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: 'https://localhost:8081/:path*',
-      },
-    ]
+    // Only apply rewrites in development
+    if (process.env.NODE_ENV === 'development') {
+      return [
+        {
+          source: '/:path*',
+          destination: 'http://localhost:8081/:path*',
+        },
+      ]
+    }
+    return []
   },
 }
 
